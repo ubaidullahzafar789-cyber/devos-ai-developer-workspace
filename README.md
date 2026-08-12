@@ -4,6 +4,23 @@
 
 DevOS is a premium, portfolio-quality developer SaaS frontend — an interactive workspace concept combining AI-powered coding, project intelligence, developer analytics, and learning roadmaps into a single cohesive experience.
 
+<div align="center">
+
+### 🚀 Live Demo
+
+[**View DevOS Live →**](https://devos-ai-developer-workspace-k976-9clhcj7ud-study-mate-ai-team.vercel.app)
+
+<br>
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white)](https://devos-ai-developer-workspace-k976-9clhcj7ud-study-mate-ai-team.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ubaidullahzafar789-cyber)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ubaid%20Ullah-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ubaid-ullah-925094424/)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ubaidullahzafar789@gmail.com)
+
+</div>
+
+---
+
 ## Features
 
 - **Hero with "Developer Core"** — a lightweight canvas-based visual representing code, AI, projects, and knowledge with subtle mouse interaction.
@@ -18,6 +35,8 @@ DevOS is a premium, portfolio-quality developer SaaS frontend — an interactive
 - **Responsive** — intentional layouts for desktop, tablet, and mobile.
 - **Accessible** — semantic HTML, keyboard navigation, focus states, ARIA labels, and `prefers-reduced-motion` support.
 
+---
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -31,9 +50,11 @@ DevOS is a premium, portfolio-quality developer SaaS frontend — an interactive
 
 No React, Vue, Angular, or chart libraries. Bootstrap is used for structural layout only — all visual identity is custom CSS.
 
+---
+
 ## Project Structure
 
-```
+```text
 DevOS/
 ├── index.html              # Single-page app with all sections
 ├── css/
@@ -55,52 +76,10 @@ DevOS/
 ├── public/
 │   └── assets/
 │       ├── brand/          # DevOS mark SVG
-│       ├── hero/           # (placeholder — Gemini assets go here)
-│       ├── illustrations/  # (placeholder)
-│       ├── 3d/             # (placeholder)
-│       └── backgrounds/    # (placeholder)
+│       ├── hero/           # Gemini-generated hero assets
+│       ├── illustrations/  # Feature illustrations
+│       ├── 3d/             # 3D visual assets
+│       └── backgrounds/    # Background textures and visuals
 ├── vite.config.ts
 ├── tsconfig.json
 └── package.json
-```
-
-## Run Locally
-
-```bash
-npm install
-npm run dev      # starts Vite dev server at http://localhost:5173
-npm run build    # type-checks (tsc) and builds to dist/
-npm run preview  # serves the production build
-```
-
-## How TypeScript Is Used
-
-TypeScript drives all meaningful application logic with proper interfaces — `Project`, `RoadmapItem`, `CommandAction`, `ActivityItem`, `WeeklyActivity`, `AiUsageSegment`, `Snippet`. The strict compiler catches null-safety issues at build time. No `any` types are used.
-
-## How Bootstrap Is Used
-
-Bootstrap provides the responsive grid (`row`/`col`), containers, flexbox utilities, spacing helpers, and breakpoints. All visual identity — buttons, cards, navbar, hero, dashboard, colors, typography, animations — is custom CSS. The result does not look like default Bootstrap.
-
-## How Animations Work
-
-- **Scroll reveal** — `IntersectionObserver` adds a `.visible` class with staggered delays via CSS custom properties.
-- **Hero canvas** — `requestAnimationFrame` loop with subtle mouse parallax; pauses entirely under reduced-motion.
-- **Card hovers** — CSS transitions on `transform` and `border-color`.
-- **Roadmap** — milestones slide in via IntersectionObserver + CSS transform.
-- **Charts** — canvas-drawn on init and re-drawn on theme change.
-- `prefers-reduced-motion` and the in-app "Reduced motion" toggle disable animations.
-
-## Assets Organization
-
-The `public/assets/` folders are ready for Gemini-generated assets. The hero visual is canvas-rendered by default; to use a generated image instead, place it in `assets/hero/` and set the `.hero-core-image-slot` `src` and `display` in CSS. All important text is real HTML — nothing is baked into images.
-
-## Deployment
-
-```bash
-npm run build
-# Deploy the dist/ directory to any static host (Vercel, Netlify, etc.)
-```
-
-## License
-
-© DevOS. All rights reserved.
