@@ -1,108 +1,132 @@
 # DevOS — AI Developer Workspace
 
-> **Your intelligent workspace for everything you build.**
+<div align="center">
 
-DevOS is a premium, portfolio-quality developer workspace concept designed to bring **AI-assisted development, project intelligence, developer analytics, code snippets, and learning roadmaps** into one cohesive experience.
+### Your intelligent workspace for everything you build.
 
-Built with a strong focus on **modern UI/UX, responsive design, TypeScript-driven application logic, interactive visualizations, accessibility, and purposeful motion**, DevOS demonstrates how a sophisticated developer product can be built without relying on a frontend framework.
+A premium developer workspace concept combining **AI assistance, project intelligence, developer analytics, code snippets, learning roadmaps, and productivity tools** into one cohesive experience.
 
----
+<br />
 
-## ✦ Overview
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Coming%20Soon-8B5CF6?style=for-the-badge)](#-live-demo)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/ubaidullahzafar789-cyber)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ubaid%20Ullah-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ubaid-ullah-925094424/)
 
-DevOS is built around one simple idea:
+<br />
 
-> **Give developers one intelligent workspace for everything they build.**
+**HTML5 • CSS3 • Bootstrap 5 • TypeScript • Canvas API • Vite**
 
-The platform combines:
-
-- AI-powered coding assistance
-- Project management
-- Developer analytics
-- Code snippets
-- AI workspace
-- Learning roadmaps
-- Command-based navigation
-- Personalized workspace settings
-
-The interface uses a **dark-first, technical, premium SaaS aesthetic** with carefully controlled visual effects and responsive layouts.
+</div>
 
 ---
 
-## ✨ Features
+# 👨‍💻 About the Developer
 
-### 🧠 Developer Core
+**DevOS is designed and developed by Ubaid Ullah**, a Software Engineering student and frontend/AI enthusiast focused on building modern web applications, developer tools, and AI-powered experiences.
 
-An interactive canvas-based hero visualization representing:
+### Connect
 
-**Code → AI → Projects → Knowledge**
+- 🐙 **GitHub:** [@ubaidullahzafar789-cyber](https://github.com/ubaidullahzafar789-cyber)
+- 💼 **LinkedIn:** [Ubaid Ullah](https://www.linkedin.com/in/ubaid-ullah-925094424/)
 
-The visual responds subtly to pointer movement while respecting reduced-motion preferences.
+---
 
-### ◈ Bento Feature Grid
+# 📖 Table of Contents
 
-A premium feature grid showcasing:
+- [Overview](#-overview)
+- [Product Vision](#-product-vision)
+- [Why DevOS](#-why-devos)
+- [Core Features](#-core-features)
+- [Premium Hero Section](#-premium-hero-section)
+- [Developer Core](#-developer-core)
+- [Bento Feature Grid](#-bento-feature-grid)
+- [AI Assistant](#-ai-assistant)
+- [Developer Dashboard](#-developer-dashboard)
+- [Project Management](#-project-management)
+- [Developer Analytics](#-developer-analytics)
+- [Interactive Developer Roadmap](#-interactive-developer-roadmap)
+- [Command Palette](#-command-palette)
+- [Theme System](#-theme-system)
+- [Reduced Motion](#-reduced-motion)
+- [Animation System](#-animation-system)
+- [Visual Design System](#-visual-design-system)
+- [Typography System](#-typography-system)
+- [Spacing System](#-spacing-system)
+- [Border Radius System](#-border-radius-system)
+- [Glassmorphism](#-glassmorphism)
+- [Background System](#-background-system)
+- [Color Palette](#-color-palette)
+- [Bootstrap Architecture](#-bootstrap-architecture)
+- [Responsive Design](#-responsive-design)
+- [TypeScript Architecture](#-typescript-architecture)
+- [TypeScript Modules](#-typescript-modules)
+- [Project Structure](#-project-structure)
+- [Assets Architecture](#-assets-architecture)
+- [AI-Generated Assets](#-ai-generated-assets)
+- [Future GitHub Integration](#-future-github-integration)
+- [Security](#-security)
+- [Performance Strategy](#-performance-strategy)
+- [Accessibility](#-accessibility)
+- [Getting Started](#-getting-started)
+- [Development Workflow](#-development-workflow)
+- [Build Verification](#-build-verification)
+- [Deployment](#-deployment)
+- [Future Roadmap](#-future-roadmap)
+- [Current Project Status](#-current-project-status)
+- [Learning Objectives](#-learning-objectives)
+- [Screenshots](#-screenshots)
+- [Live Demo](#-live-demo)
+- [Author](#-author)
+- [Support](#-support)
+- [License](#-license)
 
-- AI-Powered Coding
-- Project Intelligence
-- Developer Analytics
-- Learning Roadmap
+---
 
-The layout uses visual hierarchy instead of repetitive card designs.
+# 🚀 Overview
 
-### 🤖 AI Assistant
+**DevOS — AI Developer Workspace** is a premium frontend SaaS product concept designed around the modern developer workflow.
 
-A realistic developer-focused AI interface featuring:
+The idea behind DevOS is simple:
 
-- Conversational UI
-- Code suggestions
-- Project context
-- AI responses
-- Interactive message input
+> **Develop smarter. Ship faster.**
 
-### 📊 Developer Dashboard
+Developers frequently switch between different platforms for:
 
-A complete workspace preview containing:
+- Writing and reviewing code
+- Managing projects
+- Asking AI questions
+- Saving code snippets
+- Tracking productivity
+- Monitoring development activity
+- Learning new technologies
+- Planning technical growth
 
-- Overview
-- Projects
-- Snippets
-- AI Assistant
-- Roadmap
-- Settings
+DevOS explores the concept of bringing these experiences into one intelligent workspace.
 
-### 🚀 Project Management
+The current project focuses on creating a polished, interactive, production-quality frontend while keeping the architecture flexible enough for future backend, AI, database, authentication, and GitHub integrations.
 
-Project cards include:
+---
 
-- Technology tags
-- Progress indicators
-- Project status
-- Activity information
-- Project metadata
+# 🎯 Product Vision
 
-### 📈 Developer Analytics
-
-Custom Canvas-based visualizations display:
-
-- Coding activity
-- AI usage
-- Project progress
-- Learning progress
-
-No external charting library is required.
-
-### 🗺️ Interactive Developer Roadmap
-
-A visual developer growth roadmap covering:
+DevOS is designed around five major pillars:
 
 ```text
-Foundation
-     ↓
-Frontend
-     ↓
-Backend
-     ↓
-AI
-     ↓
-Advanced Engineering
+                    ┌─────────────────┐
+                    │      DevOS      │
+                    │ AI Developer    │
+                    │    Workspace    │
+                    └────────┬────────┘
+                             │
+        ┌────────────────────┼────────────────────┐
+        │                    │                    │
+        ▼                    ▼                    ▼
+      CODE                  AI                PROJECTS
+        │                    │                    │
+        └────────────────────┼────────────────────┘
+                             │
+                             ▼
+                       KNOWLEDGE
+                             │
+                             ▼
+                        GROWTH
