@@ -1,132 +1,106 @@
 # DevOS — AI Developer Workspace
 
-<div align="center">
+> Your intelligent workspace for everything you build.
 
-### Your intelligent workspace for everything you build.
+DevOS is a premium, portfolio-quality developer SaaS frontend — an interactive workspace concept combining AI-powered coding, project intelligence, developer analytics, and learning roadmaps into a single cohesive experience.
 
-A premium developer workspace concept combining **AI assistance, project intelligence, developer analytics, code snippets, learning roadmaps, and productivity tools** into one cohesive experience.
+## Features
 
-<br />
+- **Hero with "Developer Core"** — a lightweight canvas-based visual representing code, AI, projects, and knowledge with subtle mouse interaction.
+- **Bento feature grid** — AI-Powered Coding, Project Intelligence, Developer Analytics, and Learning Roadmap with visual hierarchy.
+- **AI Assistant interface** — a realistic chat UI with code suggestions, project context, and interactive input.
+- **Dashboard preview** — a full workspace shell with sidebar navigation and six tabs: Overview, Projects, Snippets, AI Assistant, Roadmap, and Settings.
+- **Project management** — project cards with technology tags, progress bars, status, and activity.
+- **Developer analytics** — canvas-drawn activity chart, AI usage donut, project and learning progress lists (no chart libraries).
+- **Interactive roadmap** — scroll-revealed milestones from Foundation to Advanced Engineering.
+- **Command palette** — `Ctrl/Cmd + K` searchable interface with navigation, workspace, and action commands.
+- **Theme control** — dark (default) and light mode with persisted preference.
+- **Responsive** — intentional layouts for desktop, tablet, and mobile.
+- **Accessible** — semantic HTML, keyboard navigation, focus states, ARIA labels, and `prefers-reduced-motion` support.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Coming%20Soon-8B5CF6?style=for-the-badge)](#-live-demo)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/ubaidullahzafar789-cyber)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ubaid%20Ullah-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ubaid-ullah-925094424/)
+## Tech Stack
 
-<br />
+| Layer | Technology |
+|-------|-----------|
+| Markup | HTML5 (semantic) |
+| Layout | Bootstrap 5 (grid, flex, spacing utilities only) |
+| Styling | Custom CSS3 with CSS variables, glassmorphism, canvas visuals |
+| Logic | TypeScript (strict) compiled via Vite |
+| Icons | Bootstrap Icons |
+| Fonts | Inter + JetBrains Mono (Google Fonts) |
 
-**HTML5 • CSS3 • Bootstrap 5 • TypeScript • Canvas API • Vite**
+No React, Vue, Angular, or chart libraries. Bootstrap is used for structural layout only — all visual identity is custom CSS.
 
-</div>
+## Project Structure
 
----
+```
+DevOS/
+├── index.html              # Single-page app with all sections
+├── css/
+│   ├── style.css           # Variables, base, background, navbar, hero, layout
+│   ├── components.css      # Buttons, cards, command palette, toast, inputs
+│   └── responsive.css      # Tablet and mobile breakpoints
+├── ts/
+│   ├── main.ts             # Application entry — boots all modules
+│   ├── types.ts            # Shared interfaces (Project, RoadmapItem, etc.)
+│   ├── data.ts             # Project, activity, roadmap, snippet, analytics data
+│   ├── theme.ts            # Dark/light theme controller
+│   ├── scroll.ts           # IntersectionObserver scroll reveal
+│   ├── hero-canvas.ts      # "Developer Core" canvas visual
+│   ├── command-palette.ts  # Cmd+K searchable palette
+│   ├── dashboard.ts        # Dashboard rendering, tabs, filtering
+│   ├── analytics.ts        # Canvas charts (activity bar + donut)
+│   ├── roadmap.ts          # Roadmap scroll-reveal rendering
+│   └── ai-chat.ts          # AI assistant chat interaction
+├── public/
+│   └── assets/
+│       ├── brand/          # DevOS mark SVG
+│       ├── hero/           # (placeholder — Gemini assets go here)
+│       ├── illustrations/  # (placeholder)
+│       ├── 3d/             # (placeholder)
+│       └── backgrounds/    # (placeholder)
+├── vite.config.ts
+├── tsconfig.json
+└── package.json
+```
 
-# 👨‍💻 About the Developer
+## Run Locally
 
-**DevOS is designed and developed by Ubaid Ullah**, a Software Engineering student and frontend/AI enthusiast focused on building modern web applications, developer tools, and AI-powered experiences.
+```bash
+npm install
+npm run dev      # starts Vite dev server at http://localhost:5173
+npm run build    # type-checks (tsc) and builds to dist/
+npm run preview  # serves the production build
+```
 
-### Connect
+## How TypeScript Is Used
 
-- 🐙 **GitHub:** [@ubaidullahzafar789-cyber](https://github.com/ubaidullahzafar789-cyber)
-- 💼 **LinkedIn:** [Ubaid Ullah](https://www.linkedin.com/in/ubaid-ullah-925094424/)
+TypeScript drives all meaningful application logic with proper interfaces — `Project`, `RoadmapItem`, `CommandAction`, `ActivityItem`, `WeeklyActivity`, `AiUsageSegment`, `Snippet`. The strict compiler catches null-safety issues at build time. No `any` types are used.
 
----
+## How Bootstrap Is Used
 
-# 📖 Table of Contents
+Bootstrap provides the responsive grid (`row`/`col`), containers, flexbox utilities, spacing helpers, and breakpoints. All visual identity — buttons, cards, navbar, hero, dashboard, colors, typography, animations — is custom CSS. The result does not look like default Bootstrap.
 
-- [Overview](#-overview)
-- [Product Vision](#-product-vision)
-- [Why DevOS](#-why-devos)
-- [Core Features](#-core-features)
-- [Premium Hero Section](#-premium-hero-section)
-- [Developer Core](#-developer-core)
-- [Bento Feature Grid](#-bento-feature-grid)
-- [AI Assistant](#-ai-assistant)
-- [Developer Dashboard](#-developer-dashboard)
-- [Project Management](#-project-management)
-- [Developer Analytics](#-developer-analytics)
-- [Interactive Developer Roadmap](#-interactive-developer-roadmap)
-- [Command Palette](#-command-palette)
-- [Theme System](#-theme-system)
-- [Reduced Motion](#-reduced-motion)
-- [Animation System](#-animation-system)
-- [Visual Design System](#-visual-design-system)
-- [Typography System](#-typography-system)
-- [Spacing System](#-spacing-system)
-- [Border Radius System](#-border-radius-system)
-- [Glassmorphism](#-glassmorphism)
-- [Background System](#-background-system)
-- [Color Palette](#-color-palette)
-- [Bootstrap Architecture](#-bootstrap-architecture)
-- [Responsive Design](#-responsive-design)
-- [TypeScript Architecture](#-typescript-architecture)
-- [TypeScript Modules](#-typescript-modules)
-- [Project Structure](#-project-structure)
-- [Assets Architecture](#-assets-architecture)
-- [AI-Generated Assets](#-ai-generated-assets)
-- [Future GitHub Integration](#-future-github-integration)
-- [Security](#-security)
-- [Performance Strategy](#-performance-strategy)
-- [Accessibility](#-accessibility)
-- [Getting Started](#-getting-started)
-- [Development Workflow](#-development-workflow)
-- [Build Verification](#-build-verification)
-- [Deployment](#-deployment)
-- [Future Roadmap](#-future-roadmap)
-- [Current Project Status](#-current-project-status)
-- [Learning Objectives](#-learning-objectives)
-- [Screenshots](#-screenshots)
-- [Live Demo](#-live-demo)
-- [Author](#-author)
-- [Support](#-support)
-- [License](#-license)
+## How Animations Work
 
----
+- **Scroll reveal** — `IntersectionObserver` adds a `.visible` class with staggered delays via CSS custom properties.
+- **Hero canvas** — `requestAnimationFrame` loop with subtle mouse parallax; pauses entirely under reduced-motion.
+- **Card hovers** — CSS transitions on `transform` and `border-color`.
+- **Roadmap** — milestones slide in via IntersectionObserver + CSS transform.
+- **Charts** — canvas-drawn on init and re-drawn on theme change.
+- `prefers-reduced-motion` and the in-app "Reduced motion" toggle disable animations.
 
-# 🚀 Overview
+## Assets Organization
 
-**DevOS — AI Developer Workspace** is a premium frontend SaaS product concept designed around the modern developer workflow.
+The `public/assets/` folders are ready for Gemini-generated assets. The hero visual is canvas-rendered by default; to use a generated image instead, place it in `assets/hero/` and set the `.hero-core-image-slot` `src` and `display` in CSS. All important text is real HTML — nothing is baked into images.
 
-The idea behind DevOS is simple:
+## Deployment
 
-> **Develop smarter. Ship faster.**
+```bash
+npm run build
+# Deploy the dist/ directory to any static host (Vercel, Netlify, etc.)
+```
 
-Developers frequently switch between different platforms for:
+## License
 
-- Writing and reviewing code
-- Managing projects
-- Asking AI questions
-- Saving code snippets
-- Tracking productivity
-- Monitoring development activity
-- Learning new technologies
-- Planning technical growth
-
-DevOS explores the concept of bringing these experiences into one intelligent workspace.
-
-The current project focuses on creating a polished, interactive, production-quality frontend while keeping the architecture flexible enough for future backend, AI, database, authentication, and GitHub integrations.
-
----
-
-# 🎯 Product Vision
-
-DevOS is designed around five major pillars:
-
-```text
-                    ┌─────────────────┐
-                    │      DevOS      │
-                    │ AI Developer    │
-                    │    Workspace    │
-                    └────────┬────────┘
-                             │
-        ┌────────────────────┼────────────────────┐
-        │                    │                    │
-        ▼                    ▼                    ▼
-      CODE                  AI                PROJECTS
-        │                    │                    │
-        └────────────────────┼────────────────────┘
-                             │
-                             ▼
-                       KNOWLEDGE
-                             │
-                             ▼
-                        GROWTH
+© DevOS. All rights reserved.
