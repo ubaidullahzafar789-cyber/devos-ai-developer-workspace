@@ -3,7 +3,22 @@
 > Your intelligent workspace for everything you build.
 
 DevOS is a premium, portfolio-quality developer SaaS frontend — an interactive workspace concept combining AI-powered coding, project intelligence, developer analytics, and learning roadmaps into a single cohesive experience.
+<div align="center">
 
+### 🚀 Live Demo
+
+[*View DevOS Live →*](https://devos-ai-developer-workspace-k976-9clhcj7ud-study-mate-ai-team.vercel.app)
+
+<br>
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white)](https://devos-ai-developer-workspace-k976-9clhcj7ud-study-mate-ai-team.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ubaidullahzafar789-cyber)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ubaid%20Ullah-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ubaid-ullah-925094424/)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ubaidullahzafar789@gmail.com)
+
+</div>
+
+---
 ## Features
 
 - **Hero with "Developer Core"** — a lightweight canvas-based visual representing code, AI, projects, and knowledge with subtle mouse interaction.
