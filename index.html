@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/devos-mark.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DevOS — Your intelligent workspace for everything you build. AI-powered coding, project intelligence, developer analytics, and learning roadmaps." />
+    <title>DevOS — AI Developer Workspace</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- DevOS styles -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+  </head>
+  <body>
+    <!-- Background layers -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="bg-noise" aria-hidden="true"></div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar devos-navbar fixed-top" id="navbar" aria-label="Primary navigation">
+      <div class="container-fluid devos-nav-container">
+        <a class="navbar-brand devos-brand" href="#hero" aria-label="DevOS home">
+          <img src="/assets/brand/devos-mark.svg" alt="DevOS" class="devos-brand-mark" width="28" height="28" />
+          <span class="devos-brand-name">DevOS</span>
+        </a>
+
+        <ul class="nav devos-nav-links d-none d-lg-flex">
+          <li class="nav-item"><a class="nav-link" href="#workspace">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Workspace</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ai">AI</a></li>
+          <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+        </ul>
+
+        <div class="devos-nav-actions">
+          <button class="devos-cmd-trigger" id="cmdTrigger" aria-label="Open command palette">
+            <i class="bi bi-search"></i>
+            <span class="d-none d-md-inline">Search</span>
+            <kbd class="d-none d-md-inline">⌘K</kbd>
+          </button>
+          <button class="devos-icon-btn" id="themeToggle" aria-label="Toggle theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <div class="devos-avatar" id="navAvatar" aria-label="User menu" role="button" tabindex="0">
+            <span>DV</span>
+          </div>
+          <button class="devos-icon-btn devos-burger d-lg-none" id="burger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="devos-mobile-menu" id="mobileMenu" aria-hidden="true">
+        <a href="#workspace">Features</a>
+        <a href="#projects">Projects</a>
+        <a href="#dashboard">Workspace</a>
+        <a href="#ai">AI</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#dashboard" class="devos-mobile-cta">Open Workspace</a>
+      </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <header class="devos-hero" id="hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 hero-text-col">
+            <div class="hero-eyebrow reveal" data-delay="0">
+              <span class="hero-dot"></span>
+              AI DEVELOPER WORKSPACE
+            </div>
+            <h1 class="hero-title reveal" data-delay="1">
+              DEVELOP SMARTER.<br />
+              SHIP FASTER.
+            </h1>
+            <p class="hero-subtitle reveal" data-delay="2">
+              Your intelligent workspace for coding, projects, knowledge, and developer growth.
+            </p>
+            <div class="hero-cta-row reveal" data-delay="3">
+              <button class="devos-btn devos-btn-primary" id="openWorkspaceBtn">
+                <i class="bi bi-grid-1x2-fill"></i>
+                Open Workspace
+              </button>
+              <button class="devos-btn devos-btn-ghost" id="exploreBtn">
+                Explore DevOS
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+            <div class="hero-meta reveal" data-delay="4">
+              <div class="hero-meta-item">
+                <span class="hero-meta-num">12k+</span>
+                <span class="hero-meta-label">Developers</span>
+              </div>
+              <div class="hero-meta-divider"></div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-num">340k</span>
+                <span class="hero-meta-label">AI Suggestions</span>
+              </div>
+              <div class="hero-meta-divider"></div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-num">98%</span>
+                <span class="hero-meta-label">Uptime</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 hero-visual-col">
+            <!-- Developer Core canvas visual -->
+            <div class="hero-core" id="heroCore">
+              <canvas id="coreCanvas" aria-hidden="true"></canvas>
+              <div class="hero-core-label hero-core-label-tl">
+                <span class="lbl-dot violet"></span>code.intelligence
+              </div>
+              <div class="hero-core-label hero-core-label-tr">
+                <span class="lbl-dot cyan"></span>projects.sync
+              </div>
+              <div class="hero-core-label hero-core-label-bl">
+                <span class="lbl-dot green"></span>knowledge.graph
+              </div>
+              <div class="hero-core-label hero-core-label-br">
+                <span class="lbl-dot violet"></span>ai.runtime
+              </div>
+              <!-- Replaceable hero image slot: assets/hero/ -->
+              <img class="hero-core-image-slot" alt="" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span></span>
+      </div>
+    </header>
+
+    <!-- ===================== LOGOS / TRUST BAR ===================== -->
+    <section class="devos-trust" aria-label="Trusted by teams">
+      <div class="container">
+        <p class="trust-label">Powering developer workflows at modern teams</p>
+        <div class="trust-row">
+          <span class="trust-logo"><i class="bi bi-hexagon-fill"></i> Northwind</span>
+          <span class="trust-logo"><i class="bi bi-triangle-fill"></i> Apex Labs</span>
+          <span class="trust-logo"><i class="bi bi-diamond-fill"></i> Quanta</span>
+          <span class="trust-logo"><i class="bi bi-circle-fill"></i> Orbit</span>
+          <span class="trust-logo"><i class="bi bi-star-fill"></i> Lumen</span>
+          <span class="trust-logo"><i class="bi bi-lightning-charge-fill"></i> Voltaic</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURES (BENTO) ===================== -->
+    <section class="devos-section" id="workspace">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">FEATURES</span>
+          <h2 class="section-title">Everything a developer needs, in one workspace.</h2>
+          <p class="section-sub">A unified environment for code, projects, knowledge, and growth — powered by AI.</p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-lg reveal">
+            <div class="bento-icon violet"><i class="bi bi-code-square"></i></div>
+            <h3 class="bento-title">AI-Powered Coding</h3>
+            <p class="bento-text">Intelligent assistance that understands your codebase, suggests refactors, and writes boilerplate so you focus on logic.</p>
+            <div class="bento-code">
+              <pre><code><span class="c-key">const</span> repo = <span class="c-key">await</span> devos.<span class="c-fn">analyze</span>(<span class="c-str">"./src"</span>);
+<span class="c-key">const</span> plan = <span class="c-key">await</span> ai.<span class="c-fn">suggestRefactor</span>(repo);
+<span class="c-com">// 3 improvements suggested</span>
+<span class="c-key">await</span> devos.<span class="c-fn">apply</span>(plan);</code></pre>
+            </div>
+          </article>
+
+          <article class="bento-card reveal" data-delay="1">
+            <div class="bento-icon cyan"><i class="bi bi-diagram-3-fill"></i></div>
+            <h3 class="bento-title">Project Intelligence</h3>
+            <p class="bento-text">Understand and organize projects intelligently with auto-detected stacks, dependencies, and health signals.</p>
+            <div class="bento-tags">
+              <span class="tag">auto-stack</span>
+              <span class="tag">deps</span>
+              <span class="tag">health</span>
+            </div>
+          </article>
+
+          <article class="bento-card reveal" data-delay="2">
+            <div class="bento-icon green"><i class="bi bi-graph-up-arrow"></i></div>
+            <h3 class="bento-title">Developer Analytics</h3>
+            <p class="bento-text">Track progress, activity and productivity with clean visualizations that motivate without surveillance.</p>
+            <div class="mini-bars" aria-hidden="true">
+              <span style="height:40%"></span>
+              <span style="height:70%"></span>
+              <span style="height:55%"></span>
+              <span style="height:90%"></span>
+              <span style="height:65%"></span>
+              <span style="height:80%"></span>
+              <span style="height:50%"></span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-wide reveal" data-delay="1">
+            <div class="bento-icon violet"><i class="bi bi-map"></i></div>
+            <h3 class="bento-title">Learning Roadmap</h3>
+            <p class="bento-text">Visualize developer growth and learning with interactive milestones, skill tracking, and personalized next steps.</p>
+            <div class="bento-roadmap-mini" aria-hidden="true">
+              <span class="rm-node done">Foundation</span>
+              <span class="rm-line done"></span>
+              <span class="rm-node done">Frontend</span>
+              <span class="rm-line active"></span>
+              <span class="rm-node active">Backend</span>
+              <span class="rm-line"></span>
+              <span class="rm-node">AI</span>
+              <span class="rm-line"></span>
+              <span class="rm-node">Advanced</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AI ASSISTANT ===================== -->
+    <section class="devos-section devos-ai-section" id="ai">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">AI ASSISTANT</span>
+          <h2 class="section-title">A pair programmer that knows your project.</h2>
+          <p class="section-sub">Context-aware suggestions grounded in your repository, not generic trivia.</p>
+        </div>
+
+        <div class="ai-shell reveal">
+          <div class="ai-sidebar">
+            <div class="ai-session active">
+              <i class="bi bi-chat-dots-fill"></i>
+              <div>
+                <strong>Refactor auth flow</strong>
+                <small>2 min ago</small>
+              </div>
+            </div>
+            <div class="ai-session">
+              <i class="bi bi-chat-dots"></i>
+              <div>
+                <strong>Add pagination hook</strong>
+                <small>1h ago</small>
+              </div>
+            </div>
+            <div class="ai-session">
+              <i class="bi bi-chat-dots"></i>
+              <div>
+                <strong>Explain caching layer</strong>
+                <small>Yesterday</small>
+              </div>
+            </div>
+            <div class="ai-session">
+              <i class="bi bi-chat-dots"></i>
+              <div>
+                <strong>Generate API types</strong>
+                <small>2d ago</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-main">
+            <div class="ai-header">
+              <div class="ai-context">
+                <i class="bi bi-folder2-open"></i>
+                <span>devos-app / src/auth</span>
+                <span class="ai-context-badge">context</span>
+              </div>
+              <div class="ai-status"><span class="status-dot"></span> AI online</div>
+            </div>
+
+            <div class="ai-thread" id="aiThread">
+              <div class="ai-msg ai-msg-user">
+                <div class="ai-avatar user">DV</div>
+                <div class="ai-bubble">Can you refactor the auth callback to use a single async handler and add error handling?</div>
+              </div>
+              <div class="ai-msg ai-msg-ai">
+                <div class="ai-avatar ai"><i class="bi bi-stars"></i></div>
+                <div class="ai-bubble">
+                  Here's a consolidated handler with typed errors and a fallback for missing sessions:
+                  <pre class="ai-code"><code><span class="c-key">async function</span> <span class="c-fn">handleAuthCallback</span>(req: Request): <span class="c-type">Promise&lt;Response&gt;</span> {
+  <span class="c-key">try</span> {
+    <span class="c-key">const</span> session = <span class="c-key">await</span> auth.<span class="c-fn">callback</span>(req);
+    <span class="c-key">if</span> (!session) <span class="c-key">throw new</span> <span class="c-type">AuthError</span>(<span class="c-str">"no_session"</span>);
+    <span class="c-key">return</span> Response.<span class="c-fn">redirect</span>(<span class="c-str">"/workspace"</span>);
+  } <span class="c-key">catch</span> (err) {
+    <span class="c-key">return</span> <span class="c-fn">jsonError</span>(err, <span class="c-str">"/login"</span>);
+  }
+}</code></pre>
+                  <div class="ai-actions">
+                    <button class="chip"><i class="bi bi-files"></i> Copy</button>
+                    <button class="chip"><i class="bi bi-check2"></i> Apply</button>
+                    <button class="chip"><i class="bi bi-arrow-repeat"></i> Regenerate</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-input-row">
+              <div class="ai-input">
+                <i class="bi bi-terminal"></i>
+                <input type="text" placeholder="Ask DevOS AI about your codebase…" id="aiInput" aria-label="Ask AI" />
+                <button class="devos-btn devos-btn-primary devos-btn-sm" id="aiSend">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DASHBOARD PREVIEW ===================== -->
+    <section class="devos-section" id="dashboard">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">WORKSPACE</span>
+          <h2 class="section-title">A command center for your development life.</h2>
+          <p class="section-sub">Overview, projects, snippets, AI, roadmap and settings — one cohesive environment.</p>
+        </div>
+
+        <div class="dash-shell reveal">
+          <aside class="dash-sidebar">
+            <div class="dash-side-head">Workspace</div>
+            <nav class="dash-nav" id="dashNav">
+              <button class="dash-nav-item active" data-tab="overview"><i class="bi bi-house-fill"></i> Overview</button>
+              <button class="dash-nav-item" data-tab="projects"><i class="bi bi-folder-fill"></i> Projects</button>
+              <button class="dash-nav-item" data-tab="snippets"><i class="bi bi-code-slash"></i> Snippets</button>
+              <button class="dash-nav-item" data-tab="ai"><i class="bi bi-stars"></i> AI Assistant</button>
+              <button class="dash-nav-item" data-tab="roadmap"><i class="bi bi-map-fill"></i> Roadmap</button>
+              <button class="dash-nav-item" data-tab="settings"><i class="bi bi-gear-fill"></i> Settings</button>
+            </nav>
+            <div class="dash-side-foot">
+              <div class="dash-upgrade">
+                <strong>DevOS Pro</strong>
+                <span>Unlock unlimited AI runs</span>
+                <button class="devos-btn devos-btn-primary devos-btn-sm w-100">Upgrade</button>
+              </div>
+            </div>
+          </aside>
+
+          <div class="dash-main">
+            <!-- Overview -->
+            <div class="dash-tab active" data-tab="overview">
+              <div class="dash-greet">
+                <div>
+                  <h3>Welcome back, Dev</h3>
+                  <p>Here's what's happening across your workspace today.</p>
+                </div>
+                <button class="devos-btn devos-btn-ghost devos-btn-sm"><i class="bi bi-plus-lg"></i> New project</button>
+              </div>
+
+              <div class="row g-3 dash-stats">
+                <div class="col-6 col-lg-3">
+                  <div class="stat-card">
+                    <span class="stat-label">Projects</span>
+                    <span class="stat-value">12</span>
+                    <span class="stat-trend up"><i class="bi bi-arrow-up-short"></i> 2 this week</span>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                  <div class="stat-card">
+                    <span class="stat-label">Snippets</span>
+                    <span class="stat-value">248</span>
+                    <span class="stat-trend up"><i class="bi bi-arrow-up-short"></i> 18 added</span>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                  <div class="stat-card">
+                    <span class="stat-label">AI Runs</span>
+                    <span class="stat-value">1,420</span>
+                    <span class="stat-trend up"><i class="bi bi-arrow-up-short"></i> 312 today</span>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                  <div class="stat-card">
+                    <span class="stat-label">Streak</span>
+                    <span class="stat-value">24d</span>
+                    <span class="stat-trend flat"><i class="bi bi-dash"></i> Holding</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3 mt-1">
+                <div class="col-lg-7">
+                  <div class="dash-card">
+                    <div class="dash-card-head">
+                      <h4>Recent projects</h4>
+                      <button class="chip">View all</button>
+                    </div>
+                    <div class="dash-projects" id="dashRecentProjects"></div>
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="dash-card">
+                    <div class="dash-card-head"><h4>Developer activity</h4></div>
+                    <div class="dash-activity" id="dashActivity"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3 mt-1">
+                <div class="col-lg-5">
+                  <div class="dash-card">
+                    <div class="dash-card-head"><h4>AI activity</h4></div>
+                    <div class="dash-ai-activity" id="dashAiActivity"></div>
+                  </div>
+                </div>
+                <div class="col-lg-7">
+                  <div class="dash-card">
+                    <div class="dash-card-head"><h4>Code preview</h4><span class="badge-sm mono">useDevOS.ts</span></div>
+                    <pre class="dash-code"><code><span class="c-key">import</span> { devos } <span class="c-key">from</span> <span class="c-str">"@devos/sdk"</span>;
+
+<span class="c-key">export function</span> <span class="c-fn">useDevOS</span>() {
+  <span class="c-key">const</span> session = devos.<span class="c-fn">session</span>();
+  <span class="c-key">const</span> projects = <span class="c-key">await</span> devos.projects.<span class="c-fn">list</span>();
+
+  <span class="c-key">return</span> { session, projects };
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Projects tab -->
+            <div class="dash-tab" data-tab="projects">
+              <div class="dash-greet">
+                <div><h3>Projects</h3><p>Manage and track everything you're building.</p></div>
+                <div class="dash-filter" id="projectFilter">
+                  <button class="chip active" data-filter="all">All</button>
+                  <button class="chip" data-filter="active">Active</button>
+                  <button class="chip" data-filter="archived">Archived</button>
+                </div>
+              </div>
+              <div class="row g-3" id="dashProjectsGrid"></div>
+            </div>
+
+            <!-- Snippets tab -->
+            <div class="dash-tab" data-tab="snippets">
+              <div class="dash-greet"><div><h3>Snippets</h3><p>Reusable code, saved and searchable.</p></div></div>
+              <div class="snippet-list" id="snippetList"></div>
+            </div>
+
+            <!-- AI tab -->
+            <div class="dash-tab" data-tab="ai">
+              <div class="dash-greet"><div><h3>AI Assistant</h3><p>Ask, generate, and refactor with project context.</p></div></div>
+              <div class="dash-ai-grid">
+                <div class="dash-card">
+                  <div class="dash-card-head"><h4>Suggested prompts</h4></div>
+                  <div class="ai-prompt-list">
+                    <button class="ai-prompt"><i class="bi bi-magic"></i> Summarize this repository</button>
+                    <button class="ai-prompt"><i class="bi bi-magic"></i> Find potential bugs in src/</button>
+                    <button class="ai-prompt"><i class="bi bi-magic"></i> Generate unit tests for auth.ts</button>
+                    <button class="ai-prompt"><i class="bi bi-magic"></i> Explain the caching strategy</button>
+                  </div>
+                </div>
+                <div class="dash-card">
+                  <div class="dash-card-head"><h4>Recent AI runs</h4></div>
+                  <div id="dashAiRuns"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Roadmap tab -->
+            <div class="dash-tab" data-tab="roadmap">
+              <div class="dash-greet"><div><h3>Your roadmap</h3><p>Track learning and engineering milestones.</p></div></div>
+              <div id="dashRoadmap"></div>
+            </div>
+
+            <!-- Settings tab -->
+            <div class="dash-tab" data-tab="settings">
+              <div class="dash-greet"><div><h3>Settings</h3><p>Personalize your DevOS workspace.</p></div></div>
+              <div class="dash-card settings-card">
+                <div class="setting-row">
+                  <div><strong>Theme</strong><p>Choose your preferred appearance.</p></div>
+                  <div class="setting-control">
+                    <button class="chip active" data-theme-set="dark">Dark</button>
+                    <button class="chip" data-theme-set="light">Light</button>
+                  </div>
+                </div>
+                <div class="setting-row">
+                  <div><strong>AI auto-suggest</strong><p>Automatically suggest code as you type.</p></div>
+                  <label class="devos-switch"><input type="checkbox" checked /><span class="switch-slider"></span></label>
+                </div>
+                <div class="setting-row">
+                  <div><strong>Reduced motion</strong><p>Minimize animations across the workspace.</p></div>
+                  <label class="devos-switch"><input type="checkbox" id="reduceMotionToggle" /><span class="switch-slider"></span></label>
+                </div>
+                <div class="setting-row">
+                  <div><strong>Command palette shortcut</strong><p>Open the palette with this shortcut.</p></div>
+                  <kbd>⌘K</kbd>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS SECTION ===================== -->
+    <section class="devos-section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">PROJECTS</span>
+          <h2 class="section-title">Manage projects with full context.</h2>
+          <p class="section-sub">Technology tags, progress, and activity — organized the way developers think.</p>
+        </div>
+        <div class="row g-3" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== ANALYTICS ===================== -->
+    <section class="devos-section" id="analytics">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">ANALYTICS</span>
+          <h2 class="section-title">Understand how you build.</h2>
+          <p class="section-sub">Coding activity, productivity, learning progress, and AI usage — in one clean view.</p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-lg-8">
+            <div class="dash-card analytics-card reveal">
+              <div class="dash-card-head"><h4>Weekly coding activity</h4><span class="badge-sm">last 7 days</span></div>
+              <canvas id="activityChart" width="800" height="260" aria-label="Weekly coding activity chart"></canvas>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="dash-card analytics-card reveal" data-delay="1">
+              <div class="dash-card-head"><h4>AI usage</h4></div>
+              <div class="donut-wrap">
+                <canvas id="donutChart" width="220" height="220" aria-label="AI usage breakdown"></canvas>
+                <div class="donut-center">
+                  <span class="donut-num">1,420</span>
+                  <span class="donut-label">total runs</span>
+                </div>
+              </div>
+              <div class="donut-legend" id="donutLegend"></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="dash-card analytics-card reveal">
+              <div class="dash-card-head"><h4>Project progress</h4></div>
+              <div id="progressList" class="progress-list"></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="dash-card analytics-card reveal" data-delay="1">
+              <div class="dash-card-head"><h4>Learning progress</h4></div>
+              <div id="learningList" class="learning-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ROADMAP ===================== -->
+    <section class="devos-section" id="roadmap">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">ROADMAP</span>
+          <h2 class="section-title">A guided path from foundation to advanced engineering.</h2>
+          <p class="section-sub">Interactive milestones that animate as you scroll. Track where you are and what's next.</p>
+        </div>
+
+        <div class="roadmap-track" id="roadmapTrack"></div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="devos-section devos-cta-section">
+      <div class="container">
+        <div class="cta-card reveal">
+          <h2>Ready to build smarter?</h2>
+          <p>Open your DevOS workspace and let AI handle the busywork.</p>
+          <div class="cta-row">
+            <button class="devos-btn devos-btn-primary" id="ctaOpen"><i class="bi bi-grid-1x2-fill"></i> Open Workspace</button>
+            <button class="devos-btn devos-btn-ghost" id="ctaExplore">Explore features</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="devos-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="navbar-brand devos-brand" href="#hero">
+              <img src="/assets/brand/devos-mark.svg" alt="DevOS" class="devos-brand-mark" width="28" height="28" />
+              <span class="devos-brand-name">DevOS</span>
+            </a>
+            <p>Your intelligent workspace for everything you build.</p>
+          </div>
+          <div class="footer-col">
+            <h5>Product</h5>
+            <a href="#workspace">Features</a>
+            <a href="#dashboard">Workspace</a>
+            <a href="#ai">AI</a>
+            <a href="#roadmap">Roadmap</a>
+          </div>
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <a href="#">Documentation</a>
+            <a href="#">GitHub</a>
+            <a href="#">Changelog</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="#">About</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year"></span> DevOS. All rights reserved.</span>
+          <span class="footer-status"><span class="status-dot"></span> All systems operational</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================== COMMAND PALETTE ===================== -->
+    <div class="cmd-overlay" id="cmdOverlay" aria-hidden="true" role="dialog" aria-label="Command palette">
+      <div class="cmd-palette" id="cmdPalette">
+        <div class="cmd-input-row">
+          <i class="bi bi-terminal"></i>
+          <input type="text" id="cmdInput" placeholder="Type a command or search…" aria-label="Command input" autocomplete="off" />
+          <kbd>ESC</kbd>
+        </div>
+        <div class="cmd-results" id="cmdResults"></div>
+        <div class="cmd-foot">
+          <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+          <span><kbd>↵</kbd> select</span>
+          <span><kbd>esc</kbd> close</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== NOTIFICATION TOAST ===================== -->
+    <div class="devos-toast" id="toast" role="status" aria-live="polite" aria-hidden="true">
+      <i class="bi bi-check-circle-fill"></i>
+      <span id="toastText">Done</span>
+    </div>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DevOS TypeScript application -->
+    <script type="module" src="/ts/main.ts"></script>
+  </body>
+</html>

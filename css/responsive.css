@@ -1,0 +1,165 @@
+/* =========================================================
+   DevOS — responsive.css
+   Tablet and mobile breakpoints
+   ========================================================= */
+
+/* ---------- Large desktop ---------- */
+@media (max-width: 1200px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+  .bento-lg { grid-column: span 2; grid-row: span 1; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 992px) {
+  :root { --nav-h: 64px; }
+
+  .devos-hero {
+    padding-top: calc(var(--nav-h) + var(--s-6));
+    min-height: auto;
+    text-align: center;
+  }
+  .hero-text-col { order: 1; }
+  .hero-visual-col { order: 0; margin-bottom: var(--s-4); }
+  .hero-core { max-width: 380px; }
+  .hero-eyebrow { margin-left: auto; margin-right: auto; }
+  .hero-subtitle { margin-left: auto; margin-right: auto; }
+  .hero-cta-row { justify-content: center; }
+  .hero-meta { justify-content: center; }
+  .hero-scroll-hint { display: none; }
+
+  .ai-shell { grid-template-columns: 1fr; }
+  .ai-sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 10px;
+    gap: 6px;
+  }
+  .ai-session { flex-shrink: 0; min-width: 200px; }
+
+  .dash-shell { grid-template-columns: 1fr; }
+  .dash-sidebar {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    padding: 10px;
+  }
+  .dash-side-head, .dash-side-foot { display: none; }
+  .dash-nav { flex-direction: row; gap: 4px; }
+  .dash-nav-item { white-space: nowrap; }
+
+  .dash-ai-grid { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+  .footer-brand { grid-column: span 2; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .devos-nav-container { padding: 0 16px; gap: 8px; }
+  .devos-section { padding: var(--s-6) 0; }
+  .section-title { font-size: 26px; }
+  .section-sub { font-size: 15px; }
+
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-lg, .bento-wide { grid-column: span 1; grid-row: span 1; }
+  .bento-card { padding: var(--s-2); }
+
+  .hero-meta { gap: var(--s-2); flex-wrap: wrap; }
+  .hero-meta-divider { display: none; }
+  .hero-core-label { font-size: 10px; padding: 5px 8px; }
+  .hero-core-label-tl { top: 4%; left: 0; }
+  .hero-core-label-tr { top: 6%; right: 0; }
+  .hero-core-label-bl { bottom: 20%; left: 0; }
+  .hero-core-label-br { bottom: 4%; right: 0; }
+
+  .trust-row { gap: var(--s-2); }
+  .trust-logo { font-size: 13px; }
+
+  .dash-main { padding: var(--s-2); }
+  .dash-greet h3 { font-size: 19px; }
+  .stat-value { font-size: 22px; }
+
+  /* Dashboard stats: 2 per row on mobile */
+  .dash-stats .col-6 { margin-bottom: 12px; }
+
+  /* Project rows: stack info and progress */
+  .dash-project-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .dp-progress { width: 100%; text-align: left; }
+  .dp-progress .bar { width: 100%; }
+
+  /* Activity chart: reduce height */
+  .ai-thread { max-height: 300px; padding: var(--s-2); }
+  .ai-code { font-size: 11.5px; }
+  .ai-actions { flex-wrap: wrap; }
+  .ai-header { padding: 12px 14px; }
+  .ai-context { font-size: 12px; }
+
+  .snippet-list { grid-template-columns: 1fr; }
+
+  /* Analytics: donut + legend stack */
+  .donut-wrap { margin: var(--s-1) 0; }
+
+  /* Settings rows: stack label and control */
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .setting-control { width: 100%; justify-content: flex-end; }
+
+  .cta-card { padding: var(--s-5) var(--s-3); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .roadmap-item { gap: var(--s-2); }
+  .roadmap-marker { width: 36px; height: 36px; font-size: 15px; }
+  .roadmap-line { left: 17px; top: 36px; }
+  .roadmap-content { padding: var(--s-2); }
+  .roadmap-content h3 { font-size: 16px; }
+  .roadmap-content p { font-size: 13px; }
+
+  .devos-toast { bottom: 16px; right: 16px; left: 16px; }
+
+  /* Command palette: full width on mobile */
+  .cmd-palette { margin: 0 12px; }
+  .cmd-results { max-height: 280px; }
+  .cmd-foot { flex-wrap: wrap; gap: 12px; }
+}
+
+/* ---------- Small mobile ---------- */
+@media (max-width: 480px) {
+  .hero-title { font-size: 36px; }
+  .hero-cta-row { flex-direction: column; width: 100%; }
+  .hero-cta-row .devos-btn { width: 100%; }
+  .devos-btn { padding: 12px 18px; }
+  .stat-value { font-size: 20px; }
+  .dash-greet { flex-direction: column; }
+  .hero-meta { flex-direction: column; gap: 10px; align-items: center; text-align: center; }
+  .hero-meta-item { flex-direction: row; align-items: baseline; gap: 6px; }
+
+  /* Hide cmd trigger kbd on very small screens */
+  .devos-cmd-trigger kbd { display: none; }
+  .devos-cmd-trigger { padding: 8px 10px; }
+
+  /* Dashboard stat cards: 1 per row on very small screens */
+  .dash-stats .col-6 { flex: 0 0 100%; max-width: 100%; }
+
+  /* Bento code blocks: smaller font */
+  .bento-code { font-size: 12px; padding: 12px; }
+
+  /* Snippet code: smaller font */
+  .snippet-code { font-size: 11px; }
+
+  /* Roadmap: tighter spacing */
+  .roadmap-item { gap: 10px; padding-bottom: var(--s-3); }
+  .roadmap-marker { width: 32px; height: 32px; font-size: 14px; }
+  .roadmap-line { left: 15px; top: 32px; }
+}
