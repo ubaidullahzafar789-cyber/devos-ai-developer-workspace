@@ -2,13 +2,9 @@
 
 > Your intelligent workspace for everything you build.
 
-DevOS is a premium, portfolio-quality developer SaaS frontend — an interactive workspace concept combining AI-powered coding, project intelligence, developer analytics, and learning roadmaps into a single cohesive experience.
-
 <div align="center">
 
-### 🚀 Live Demo
-
-[**View DevOS Live →**](https://devos-ai-developer-workspace-k976-9clhcj7ud-study-mate-ai-team.vercel.app)
+### A premium AI-powered developer workspace for coding, projects, analytics, learning, and developer productivity.
 
 <br>
 
@@ -21,65 +17,109 @@ DevOS is a premium, portfolio-quality developer SaaS frontend — an interactive
 
 ---
 
-## Features
+# 📖 Table of Contents
 
-- **Hero with "Developer Core"** — a lightweight canvas-based visual representing code, AI, projects, and knowledge with subtle mouse interaction.
-- **Bento feature grid** — AI-Powered Coding, Project Intelligence, Developer Analytics, and Learning Roadmap with visual hierarchy.
-- **AI Assistant interface** — a realistic chat UI with code suggestions, project context, and interactive input.
-- **Dashboard preview** — a full workspace shell with sidebar navigation and six tabs: Overview, Projects, Snippets, AI Assistant, Roadmap, and Settings.
-- **Project management** — project cards with technology tags, progress bars, status, and activity.
-- **Developer analytics** — canvas-drawn activity chart, AI usage donut, project and learning progress lists (no chart libraries).
-- **Interactive roadmap** — scroll-revealed milestones from Foundation to Advanced Engineering.
-- **Command palette** — `Ctrl/Cmd + K` searchable interface with navigation, workspace, and action commands.
-- **Theme control** — dark (default) and light mode with persisted preference.
-- **Responsive** — intentional layouts for desktop, tablet, and mobile.
-- **Accessible** — semantic HTML, keyboard navigation, focus states, ARIA labels, and `prefers-reduced-motion` support.
+- [About DevOS](#-about-devos)
+- [Why DevOS](#-why-devos)
+- [Project Vision](#-project-vision)
+- [Project Objectives](#-project-objectives)
+- [Core Features](#-core-features)
+- [Premium Hero](#-premium-hero)
+- [Developer Core](#-developer-core)
+- [Bento Feature Grid](#-bento-feature-grid)
+- [AI Assistant](#-ai-assistant)
+- [Developer Dashboard](#-developer-dashboard)
+- [Project Management](#-project-management)
+- [Developer Analytics](#-developer-analytics)
+- [Interactive Developer Roadmap](#-interactive-developer-roadmap)
+- [Command Palette](#-command-palette)
+- [Theme System](#-theme-system)
+- [Animation System](#-animation-system)
+- [Reduced Motion](#-reduced-motion)
+- [Responsive Design](#-responsive-design)
+- [Accessibility](#-accessibility)
+- [Visual Design System](#-visual-design-system)
+- [Color Palette](#-color-palette)
+- [Typography](#-typography)
+- [Spacing System](#-spacing-system)
+- [Border Radius](#-border-radius)
+- [Glassmorphism](#-glassmorphism)
+- [Background System](#-background-system)
+- [Technology Stack](#-technology-stack)
+- [Bootstrap Architecture](#-bootstrap-architecture)
+- [TypeScript Architecture](#-typescript-architecture)
+- [Animation Architecture](#-animation-architecture)
+- [Project Structure](#-project-structure)
+- [Assets Architecture](#-assets-architecture)
+- [AI-Generated Assets](#-ai-generated-assets)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
+- [Environment Setup](#-environment-setup)
+- [Run Locally](#-run-locally)
+- [Development Workflow](#-development-workflow)
+- [Git Workflow](#-git-workflow)
+- [Build and Production](#-build-and-production)
+- [Testing and Verification](#-testing-and-verification)
+- [Browser Compatibility](#-browser-compatibility)
+- [Security](#-security)
+- [Performance](#-performance)
+- [Deployment](#-deployment)
+- [Live Demo](#-live-demo)
+- [Current Project Status](#-current-project-status)
+- [Known Limitations](#-known-limitations)
+- [Future AI Integration](#-future-ai-integration)
+- [Future GitHub Integration](#-future-github-integration)
+- [Future Roadmap](#-future-roadmap)
+- [Learning Objectives](#-learning-objectives)
+- [Code Quality](#-code-quality)
+- [Screenshots](#-screenshots)
+- [Contributing](#-contributing)
+- [Support](#-support)
+- [⭐ Star the Project](#-star-the-project)
+- [Acknowledgements](#-acknowledgements)
+- [Changelog](#-changelog)
+- [Author](#-author)
+- [Contact](#-contact)
+- [License](#-license)
 
 ---
 
-## Tech Stack
+# 🚀 About DevOS
 
-| Layer | Technology |
-|-------|-----------|
-| Markup | HTML5 (semantic) |
-| Layout | Bootstrap 5 (grid, flex, spacing utilities only) |
-| Styling | Custom CSS3 with CSS variables, glassmorphism, canvas visuals |
-| Logic | TypeScript (strict) compiled via Vite |
-| Icons | Bootstrap Icons |
-| Fonts | Inter + JetBrains Mono (Google Fonts) |
+**DevOS — AI Developer Workspace** is a premium, portfolio-quality developer SaaS frontend designed to bring multiple aspects of a developer's workflow into one unified environment.
 
-No React, Vue, Angular, or chart libraries. Bootstrap is used for structural layout only — all visual identity is custom CSS.
+DevOS combines:
+
+- AI-assisted development
+- Project management
+- Developer analytics
+- Code snippets
+- Learning roadmaps
+- Developer productivity
+- Interactive visualizations
+- Modern SaaS UI/UX
+
+The project is designed as a scalable frontend foundation that can later evolve into a full-stack AI-powered developer platform.
 
 ---
 
-## Project Structure
+# 💡 Why DevOS?
+
+Modern developers often switch between many different tools.
+
+For example:
 
 ```text
-DevOS/
-├── index.html              # Single-page app with all sections
-├── css/
-│   ├── style.css           # Variables, base, background, navbar, hero, layout
-│   ├── components.css      # Buttons, cards, command palette, toast, inputs
-│   └── responsive.css      # Tablet and mobile breakpoints
-├── ts/
-│   ├── main.ts             # Application entry — boots all modules
-│   ├── types.ts            # Shared interfaces (Project, RoadmapItem, etc.)
-│   ├── data.ts             # Project, activity, roadmap, snippet, analytics data
-│   ├── theme.ts            # Dark/light theme controller
-│   ├── scroll.ts           # IntersectionObserver scroll reveal
-│   ├── hero-canvas.ts      # "Developer Core" canvas visual
-│   ├── command-palette.ts  # Cmd+K searchable palette
-│   ├── dashboard.ts        # Dashboard rendering, tabs, filtering
-│   ├── analytics.ts        # Canvas charts (activity bar + donut)
-│   ├── roadmap.ts          # Roadmap scroll-reveal rendering
-│   └── ai-chat.ts          # AI assistant chat interaction
-├── public/
-│   └── assets/
-│       ├── brand/          # DevOS mark SVG
-│       ├── hero/           # Gemini-generated hero assets
-│       ├── illustrations/  # Feature illustrations
-│       ├── 3d/             # 3D visual assets
-│       └── backgrounds/    # Background textures and visuals
-├── vite.config.ts
-├── tsconfig.json
-└── package.json
+Code Editor
+     ↓
+GitHub
+     ↓
+AI Assistant
+     ↓
+Project Management
+     ↓
+Analytics
+     ↓
+Documentation
+     ↓
+Learning Platforms
